@@ -15,29 +15,44 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: transparent;
+  /* TODO: voltar para transparent quando implementar scroll JS (nav.js) */
+  background-color: var(--bg-primary);
   padding: var(--space-4) 0;
   transition: background-color var(--transition-base),
-              backdrop-filter var(--transition-base),
-              box-shadow var(--transition-base);
+    box-shadow var(--transition-base);
 }
 
-#header.header-scrolled {
-  background-color: rgba(13, 17, 23, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* TODO: ativar via JS no scroll — .header-scrolled {
   box-shadow: var(--shadow);
-}
-
-[data-theme="light"] #header.header-scrolled {
-  background-color: rgba(248, 250, 252, 0.85);
-}
+} */
 
 #header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+}
+
+/* Mobile: reordenar menu-toggle (direita) e theme-toggle (centro) */
+.logo {
+  order: 0;
+}
+
+#header nav {
+  display: none;
+  order: 3;
+}
+
+.menu-toggle {
+  order: 2;
+}
+
+#theme-toggle {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .logo {
@@ -93,36 +108,6 @@
   width: 100%;
 }
 
-/* Toggle tema */
-#theme-toggle {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color var(--transition-fast),
-              border-color var(--transition-fast);
-  flex-shrink: 0;
-}
-
-#theme-toggle:hover {
-  background-color: var(--accent-soft);
-  border-color: var(--accent);
-}
-
-.theme-toggle-icon {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: var(--radius-full);
-  background-color: var(--accent);
-  transition: transform var(--transition-base);
-}
-
 /* Menu mobile (hamburger) */
 .menu-toggle {
   display: flex;
@@ -145,7 +130,7 @@
   background-color: var(--text-primary);
   border-radius: var(--radius-full);
   transition: transform var(--transition-base),
-              opacity var(--transition-base);
+    opacity var(--transition-base);
 }
 
 .menu-toggle-open span:nth-child(1) {
@@ -261,11 +246,11 @@
   cursor: pointer;
   text-decoration: none;
   transition: background-color var(--transition-fast),
-              color var(--transition-fast),
-              border-color var(--transition-fast),
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast);
-  white-space: nowrap;
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  
 }
 
 .btn:focus-visible {
@@ -402,8 +387,8 @@
   color: var(--text-secondary);
   font-size: var(--text-base);
   transition: border-color var(--transition-fast),
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   position: relative;
   padding-left: var(--space-12);
 }
@@ -464,8 +449,8 @@
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   transition: border-color var(--transition-fast),
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .skill-category:hover {
@@ -498,8 +483,8 @@
   font-size: var(--text-sm);
   color: var(--text-secondary);
   transition: border-color var(--transition-fast),
-              color var(--transition-fast),
-              background-color var(--transition-fast);
+    color var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 .skill-list li:hover {
@@ -538,12 +523,10 @@
   top: var(--space-4);
   bottom: var(--space-4);
   width: 2px;
-  background: linear-gradient(
-    to bottom,
-    var(--accent),
-    var(--accent-soft),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      var(--accent),
+      var(--accent-soft),
+      transparent);
   border-radius: var(--radius-full);
 }
 
@@ -735,7 +718,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   transition: border-color var(--transition-fast),
-              transform var(--transition-fast);
+    transform var(--transition-fast);
 }
 
 .contato-links p:hover {
@@ -760,6 +743,13 @@
 
 .contato-links a:hover {
   color: var(--accent);
+}
+
+#contato .btn {
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+  margin-top: var(--space-2);
 }
 
 /* ===================================================================
@@ -814,8 +804,8 @@
   font-weight: 500;
   text-decoration: none;
   transition: border-color var(--transition-fast),
-              color var(--transition-fast),
-              background-color var(--transition-fast);
+    color var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 .footer-social a:hover {
@@ -834,19 +824,32 @@
    RESPONSIVO — TABLET (768px+)
    =================================================================== */
 
-@media (min-width: 768px) {
-  /* Header */
+/* Header próprio para telas >= 800px (hamburguer some só acima disso) */
+@media (min-width: 800px) {
   #header nav {
     display: block;
+    order: 0;
   }
 
   .menu-toggle {
     display: none;
+    order: 0;
+  }
+
+  #theme-toggle {
+    order: 0;
+  }
+
+  .logo {
+    order: 0;
   }
 
   #header {
     padding: var(--space-6) 0;
   }
+}
+
+@media (min-width: 768px) {
 
   /* Hero */
   .hero-avatar {
@@ -928,6 +931,10 @@
     min-width: 100px;
   }
 
+  #contato .btn {
+    width: auto;
+  }
+
   /* Footer */
   #footer .container {
     flex-direction: row;
@@ -947,6 +954,7 @@
    =================================================================== */
 
 @media (min-width: 1024px) {
+
   /* Hero */
   .hero-avatar {
     width: 220px;
@@ -995,6 +1003,7 @@
    =================================================================== */
 
 @media (min-width: 1280px) {
+
   /* Hero */
   .hero-title {
     font-size: var(--text-5xl);

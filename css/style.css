@@ -1,5 +1,6 @@
 @import url('components.css');
 @import url('animations.css');
+@import url('toggle.css');
 
 /* === RESET === */
 *,
@@ -19,6 +20,7 @@ html {
   --bg-primary: #0d1117;
   --bg-secondary: #111827;
   --bg-card: #1a2332;
+  --white: #ffffff;
 
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
@@ -37,6 +39,7 @@ html {
   --bg-primary: #f8fafc;
   --bg-secondary: #f1f5f9;
   --bg-card: #ffffff;
+  --white: #ffffff;
 
   --text-primary: #0f172a;
   --text-secondary: #475569;

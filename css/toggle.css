@@ -1,0 +1,174 @@
+/* ===================================================================
+   toggle.css — Toggle tema (switch sol/lua)
+   Portfolio Ryan Soares
+   =================================================================== */
+
+.switch {
+  position: relative;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  --switch-trans-dur: 0.4s;
+  --switch-timing: cubic-bezier(0.65, 0, 0.35, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
+  height: 1.5em;
+}
+
+.switch__input {
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-muted);
+  transition: background-color var(--switch-trans-dur) var(--switch-timing);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Knob + ícone — mesmo posicionamento, ancorados no .switch */
+.switch__knob,
+.switch__icon {
+  position: absolute;
+  top: 0.125em;
+  left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform var(--switch-trans-dur) var(--switch-timing);
+}
+
+.switch__knob {
+  background-color: var(--bg-card);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.switch__icon {
+  overflow: hidden;
+  background-color: var(--bg-card);
+  z-index: 2;
+}
+
+.switch__icon-part {
+  display: block;
+  position: absolute;
+  transition:
+    box-shadow var(--switch-trans-dur) var(--switch-timing),
+    transform var(--switch-trans-dur) var(--switch-timing);
+}
+
+.switch__icon-part--1,
+.switch__icon-part--2,
+.switch__icon-part--3 {
+  border-radius: 50%;
+}
+
+/* Sol (dark mode) — sempre branco */
+.switch__icon-part--1 {
+  background-color: var(--white);
+  top: calc(50% - 0.375em);
+  left: calc(50% - 0.375em);
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.switch__icon-part--2 {
+  background-color: var(--white);
+  top: calc(50% - 0.4375em);
+  left: calc(50% - 0.0625em);
+  width: 0.5em;
+  height: 0.5em;
+  transform: translate(-0.1875em, 0.1875em) scale(0.2);
+}
+
+.switch__icon-part--3 {
+  box-shadow: 0 0 0 0.625em var(--white) inset;
+  width: 1.25em;
+  height: 1.25em;
+  transform: scale(0.25);
+}
+
+/* Raios do sol — sempre brancos */
+.switch__icon-part--3 ~ .switch__icon-part {
+  background-color: var(--white);
+  border-radius: 0.0625em;
+  top: 50%;
+  left: 50%;
+  width: 0.125em;
+  height: 0.1875em;
+  transform-origin: 50% 0;
+}
+
+.switch__icon-part--4 {
+  transform: translateX(-50%) rotate(0) translateY(0.25em);
+}
+.switch__icon-part--5 {
+  transform: translateX(-50%) rotate(45deg) translateY(0.25em);
+}
+.switch__icon-part--6 {
+  transform: translateX(-50%) rotate(90deg) translateY(0.25em);
+}
+.switch__icon-part--7 {
+  transform: translateX(-50%) rotate(135deg) translateY(0.25em);
+}
+.switch__icon-part--8 {
+  transform: translateX(-50%) rotate(180deg) translateY(0.25em);
+}
+.switch__icon-part--9 {
+  transform: translateX(-50%) rotate(225deg) translateY(0.25em);
+}
+.switch__icon-part--10 {
+  transform: translateX(-50%) rotate(270deg) translateY(0.25em);
+}
+.switch__icon-part--11 {
+  transform: translateX(-50%) rotate(315deg) translateY(0.25em);
+}
+
+.switch__sr {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+/* `:checked` state — tema light (lua) */
+.switch__input:checked {
+  background-color: var(--accent);
+}
+.switch__input:checked ~ .switch__knob {
+  transform: translateX(1.5em);
+  background-color: var(--accent);
+  box-shadow: none;
+}
+.switch__input:checked ~ .switch__icon {
+  transform: translateX(1.5em);
+  background-color: transparent;
+}
+
+/* Lua crescente aparece (branca) */
+.switch__input:checked ~ .switch__icon .switch__icon-part--2 {
+  background-color: var(--bg-card);
+  transform: translate(0, 0) scale(1);
+}
+
+/* Lua cheia cobre o sol */
+.switch__input:checked ~ .switch__icon .switch__icon-part--3 {
+  box-shadow: 0 0 0 0.28em var(--bg-card) inset;
+  transform: scale(1);
+}
+
+/* Raios desaparecem */
+.switch__input:checked ~ .switch__icon .switch__icon-part--4,
+.switch__input:checked ~ .switch__icon .switch__icon-part--5,
+.switch__input:checked ~ .switch__icon .switch__icon-part--6,
+.switch__input:checked ~ .switch__icon .switch__icon-part--7,
+.switch__input:checked ~ .switch__icon .switch__icon-part--8,
+.switch__input:checked ~ .switch__icon .switch__icon-part--9,
+.switch__input:checked ~ .switch__icon .switch__icon-part--10,
+.switch__input:checked ~ .switch__icon .switch__icon-part--11 {
+  transform: translateX(-50%) rotate(0) translateY(0.625em) scale(0);
+}

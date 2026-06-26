@@ -1,11 +1,206 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Soares | Desenvolvedor Fullstack</title>
+  <meta name="description" content="Desenvolvedor Fullstack especializado em mobile (Flutter) e web. Do back ao app — sistemas que funcionam do começo ao fim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+  <header id="header">
+    <div class="container">
+      <a href="#" class="logo">Ryan Soares</a>
+      <nav>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" aria-label="Alternar tema claro/escuro">
+        <span class="theme-toggle-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="container">
+        <div class="hero-avatar">
+          <!-- <img src="assets/avatar/avatar.svg" alt="Ilustração de Ryan Soares, desenvolvedor fullstack" class="hero-avatar-img"> -->
+          <div class="hero-avatar-placeholder"></div>
+        </div>
+        <h1 class="hero-title">Ryan Soares</h1>
+        <p class="hero-subtitle">Desenvolvedor Fullstack</p>
+        <p class="hero-positioning">"Do back ao app — sistemas que funcionam do começo ao fim"</p>
+        <div class="hero-ctas">
+          <a href="mailto:ryansoareshub@gmail.com" class="btn btn-primary">Me manda seu projeto</a>
+          <a href="https://www.linkedin.com/in/ryan-soares-17488b351" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <h2>Sobre Mim</h2>
+        <div class="sobre-content">
+          <p>Ryan veio do chão de fábrica — não da faculdade direto pra tela. Trabalhou dois anos na indústria óptica com controle de qualidade, processos e organização antes de migrar para desenvolvimento de software. Isso moldou um jeito diferente de trabalhar: disciplina, atenção ao detalhe e compromisso com o que foi combinado.</p>
+          <p>Hoje desenvolve aplicações mobile e web de ponta a ponta — do banco de dados ao app na loja — com +1 ano de experiência em projetos reais de alta complexidade.</p>
+          <ul>
+            <li>Vindo da indústria (contexto de qualidade e processos)</li>
+            <li>Organização como valor central</li>
+            <li>Fascinado por desafio</li>
+            <li>Comunica em linguagem simples, sem "tecniquês"</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <div class="servicos-content">
+          <p>Você tem uma ideia de aplicativo mas não sabe por onde começar — ou já tentou antes e o dev sumiu no meio do projeto?</p>
+          <p>Trabalho com FlutterFlow e Flutter para criar apps Android e iOS do zero, com backend em Supabase (banco de dados, autenticação, funcionalidades em tempo real).</p>
+          <p>Já entreguei projetos reais: um ecossistema de mobilidade urbana com rastreamento ao vivo e pagamento integrado via Stripe, e um sistema ERP com controle de estoque e financeiro.</p>
+          <ul>
+            <li>Comunicação ativa durante todo o projeto — você não fica no escuro</li>
+            <li>Prazo combinado é prazo cumprido</li>
+            <li>Explico cada etapa em linguagem simples, sem "tecniquês"</li>
+            <li>Disponível para ajustes após a entrega</li>
+          </ul>
+          <p class="servicos-cta">+1 ano de experiência com desenvolvimento mobile em projetos reais de alta complexidade, utilizando FlutterFlow, Flutter e Supabase.</p>
+          <a href="mailto:ryansoareshub@gmail.com" class="btn btn-primary">Manda uma mensagem descrevendo seu projeto. Respondo rápido.</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skills & Tecnologias</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Uso no dia a dia</h3>
+            <ul class="skill-list">
+              <li>Flutter</li>
+              <li>Dart</li>
+              <li>Supabase</li>
+              <li>PostgreSQL</li>
+              <li>Figma</li>
+              <li>API REST</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Sei usar</h3>
+            <ul class="skill-list">
+              <li>JavaScript</li>
+              <li>Node.js</li>
+              <li>Next.js</li>
+              <li>NestJS</li>
+              <li>React</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Aprendendo ativamente</h3>
+            <ul class="skill-list">
+              <li>Stack JavaScript (aprofundamento) — Next.js, Node.js, React em nível profissional</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="container">
+        <h2>Experiência</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Teamsoft</h3>
+            <p class="timeline-role">Desenvolvedor Mobile (Estagiário)</p>
+            <ul>
+              <li>Desenvolvimento de apps multiplataforma com Flutter/Dart, arquitetura BLoC</li>
+              <li>Tradução fiel de protótipos Figma em código Flutter</li>
+              <li>Modelagem de banco de dados relacional, migrations em produção (tabelas, relacionamentos, índices, constraints, funções SQL)</li>
+              <li>Jobs agendados, triggers e automações via pg_cron</li>
+              <li>Integração com Supabase (autenticação, RLS, Edge Functions) e Firebase</li>
+              <li>Implementação de pagamentos com Stripe (criação de clientes, métodos de pagamento, tratamento de erros)</li>
+              <li>Publicação e gerenciamento de releases na Google Play Store</li>
+              <li>Ciclo completo: Git, Docker, Azure DevOps (CI/CD, branches, pull requests)</li>
+              <li>Diagnóstico e correção de bugs em produção (falhas de RLS, inconsistências de migração)</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3>Rodenstock — Auxiliar de Produção</h3>
+            <p class="timeline-period">Fev 2025 – Ago 2025 (7 meses)</p>
+            <p>Atuou no setor de Controle de Qualidade inspecionando lentes. Integrou o programa AGILA, criando e ajustando planilhas específicas para setores de produção.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Rodenstock — Auxiliar de Escritório (Aprendiz)</h3>
+            <p class="timeline-period">Fev 2024 – Fev 2025 (1 ano)</p>
+            <p>Elaboração e ajuste de relatórios diários com Excel (PROCV, SOMA, MÉDIA), organização dos setores de produção, uso de CRM para gestão de pedidos de clientes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <h2>Projetos</h2>
+        <div class="projetos-empty">
+          <p><strong>Em breve</strong></p>
+          <p>Esta seção será populada com projetos reais após a conclusão do portfólio.</p>
+          <p>Projetos em desenvolvimento para inclusão futura:</p>
+          <ul>
+            <li>Loja na Mão (Flutter + Supabase)</li>
+            <li>Agenda Fácil (Flutter + Supabase)</li>
+            <li>Mini ERP (Flutter + Supabase)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <div class="contato-links">
+          <p><strong>Email:</strong> <a href="mailto:ryansoareshub@gmail.com">ryansoareshub@gmail.com</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/RyanSDeve" target="_blank" rel="noopener noreferrer">github.com/RyanSDeve</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ryan-soares-17488b351" target="_blank" rel="noopener noreferrer">linkedin.com/in/ryan-soares-17488b351</a></p>
+          <p><strong>99Freelas:</strong> <a href="https://www.99freelas.com.br/user/ryan-soares7-dev" target="_blank" rel="noopener noreferrer">99freelas.com.br/user/ryan-soares7-dev</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#hero">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#skills">Skills</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/RyanSDeve" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ryan-soares-17488b351" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.99freelas.com.br/user/ryan-soares7-dev" target="_blank" rel="noopener noreferrer">99Freelas</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Ryan Soares. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

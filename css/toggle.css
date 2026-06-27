@@ -69,7 +69,7 @@
 
 /* Sol (dark mode) — sempre branco */
 .switch__icon-part--1 {
-  background-color: var(--white);
+  background-color: var(--accent);
   top: calc(50% - 0.375em);
   left: calc(50% - 0.375em);
   width: 0.75em;
@@ -77,7 +77,7 @@
 }
 
 .switch__icon-part--2 {
-  background-color: var(--white);
+  background-color: var(--accent);
   top: calc(50% - 0.4375em);
   left: calc(50% - 0.0625em);
   width: 0.5em;
@@ -86,7 +86,7 @@
 }
 
 .switch__icon-part--3 {
-  box-shadow: 0 0 0 0.625em var(--white) inset;
+  box-shadow: 0 0 0 0.625em var(--accent) inset;
   width: 1.25em;
   height: 1.25em;
   transform: scale(0.25);
@@ -94,7 +94,7 @@
 
 /* Raios do sol — sempre brancos */
 .switch__icon-part--3 ~ .switch__icon-part {
-  background-color: var(--white);
+  background-color: var(--accent);
   border-radius: 0.0625em;
   top: 50%;
   left: 50%;

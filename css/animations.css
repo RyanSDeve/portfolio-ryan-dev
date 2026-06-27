@@ -1,0 +1,71 @@
+/* ===================================================================
+   animations.css — micro-interações e animações sutis
+   Portfolio Ryan Soares
+   =================================================================== */
+
+/* Fade-in para elementos revelados ao scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Transição suave entre temas */
+body {
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Hover sutil para links, botões e cards */
+a,
+.btn,
+.skill-category,
+.servicos-content ul li,
+.timeline-item,
+.contato-links p,
+.footer-social a {
+    transition: color var(--transition-fast),
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+a:hover,
+.btn:hover,
+.skill-category:hover,
+.servicos-content ul li:hover,
+.timeline-item:hover,
+.contato-links p:hover,
+.footer-social a:hover {
+    transform: translateY(-1px);
+}
+
+/* Respeitar preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .fade-in,
+    .fade-in.visible,
+    body,
+    a,
+    .btn,
+    .skill-category,
+    .servicos-content ul li,
+    .timeline-item,
+    .contato-links p,
+    .footer-social a {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+    }
+}

@@ -2,24 +2,36 @@ const HEADER_SELECTOR = '#header';
 const NAV_SELECTOR = '#header nav';
 const MENU_TOGGLE_SELECTOR = '.menu-toggle';
 const NAV_LINK_SELECTOR = '#header nav a';
-const SCROLL_OFFSET = 20;
+const SCROLL_OFFSET = 90;
 
 function setActiveLink() {
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll(`${NAV_LINK_SELECTOR}.nav-link`);
-    const scrollPosition = window.scrollY + 120;
+    const scrollPosition = window.scrollY + SCROLL_OFFSET;
+
+    navLinks.forEach((link) => {
+        link.classList.remove('nav-link-active');
+    });
+
+    let activeSectionId = null;
 
     sections.forEach((section) => {
         const sectionId = section.getAttribute('id');
-        const sectionTop = section.offsetTop;
+        const sectionTop = section.offsetTop - SCROLL_OFFSET;
         const sectionHeight = section.offsetHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach((link) => {
-                link.classList.toggle('nav-link-active', link.getAttribute('href') === `#${sectionId}`);
-            });
+            activeSectionId = sectionId;
         }
     });
+
+    if (activeSectionId) {
+        navLinks.forEach((link) => {
+            if (link.getAttribute('href') === `#${activeSectionId}`) {
+                link.classList.add('nav-link-active');
+            }
+        });
+    }
 }
 
 function closeMenu(header, nav, toggle) {
@@ -82,7 +94,8 @@ export function initNav() {
 
             if (targetSection) {
                 event.preventDefault();
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 history.pushState(null, '', targetId);
 
                 if (window.innerWidth <= 768) {

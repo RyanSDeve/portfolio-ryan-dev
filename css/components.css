@@ -856,6 +856,14 @@
   background-color: var(--accent-soft);
 }
 
+.footer-social a .icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: currentColor;
+  fill: currentColor;
+}
+
 .footer-copyright {
   font-size: var(--text-xs);
   color: var(--text-muted);

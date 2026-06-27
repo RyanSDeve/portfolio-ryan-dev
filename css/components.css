@@ -250,7 +250,7 @@
     border-color var(--transition-fast),
     transform var(--transition-fast),
     box-shadow var(--transition-fast);
-  
+
 }
 
 .btn:focus-visible {
@@ -735,14 +735,29 @@
 }
 
 .contato-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
   font-size: var(--text-sm);
   color: var(--text-primary);
-  word-break: break-all;
+  word-break: break-word;
   transition: color var(--transition-fast);
 }
 
 .contato-links a:hover {
   color: var(--accent);
+}
+
+.contato-links a .icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: var(--accent);
+  fill: currentColor;
+}
+
+.contato-links a:hover .icon {
+  color: var(--accent-hover);
 }
 
 #contato .btn {
